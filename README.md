@@ -63,6 +63,3 @@ project-root/
 │   └── app.js
 └── README.md
 ```
-
-## License
-MIT
