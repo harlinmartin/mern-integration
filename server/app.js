@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const cors = require('dotenv'); // Wait, cors is usually require('cors')
+const cors = require('cors');
 const connectDB = require('./config/db');
 
 // Load env vars
@@ -15,8 +15,7 @@ const app = express();
 app.use(express.json());
 
 // Enable CORS
-const corsLib = require('cors');
-app.use(corsLib());
+app.use(cors());
 
 // Basic Route
 app.get('/', (req, res) => {
