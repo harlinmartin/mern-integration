@@ -7,6 +7,7 @@ const connectDB = require('./config/db');
 dotenv.config();
 
 // Connect to database
+console.log('Attempting to connect to MongoDB...');
 connectDB();
 
 const app = express();
@@ -25,6 +26,12 @@ app.get('/', (req, res) => {
 // Mount Routes
 const userRoutes = require('./routes/UserRoutes');
 app.use('/api', userRoutes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error('SERVER ERROR:', err.stack);
+    res.status(500).json({ success: false, message: err.message });
+});
 
 const PORT = process.env.PORT || 5000;
 
