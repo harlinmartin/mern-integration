@@ -54,6 +54,7 @@ project-root/
 │   │   ├── pages/
 │   │   └── App.jsx
 │   └── vite.config.js
+
 ├── server/          # Node.js Backend
 │   ├── config/
 │   ├── controllers/
